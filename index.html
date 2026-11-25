@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DengueShield AI | Predict. Explain. Prevent.</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- LOGIN PAGE -->
+
+<section id="loginPage" class="login-page">
+
+    <div class="login-left">
+        <div class="brand">
+            <span class="brand-icon">🛡️</span>
+            <span>DengueShield <b>AI</b></span>
+        </div>
+
+        <div class="login-content">
+            <span class="tag">AI-POWERED PUBLIC HEALTH</span>
+
+            <h1>Predict.<br>Explain.<br><span>Prevent.</span></h1>
+
+            <p>
+                An intelligent dengue surveillance and
+                early-warning platform designed to help
+                communities stay one step ahead.
+            </p>
+
+            <div class="login-features">
+                <div>✓ AI-based risk monitoring</div>
+                <div>✓ Ward-level surveillance</div>
+                <div>✓ Predictive health analytics</div>
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 DengueShield AI | Public Health Intelligence
+        </p>
+    </div>
+
+    <div class="login-right">
+
+        <div class="login-box">
+
+            <div class="mobile-brand">🛡️ DengueShield AI</div>
+
+            <span class="welcome">WELCOME BACK</span>
+            <h2>Login to your account</h2>
+
+            <p class="login-description">
+                Access your dengue monitoring dashboard.
+            </p>
+
+            <form id="loginForm">
+
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <p id="loginError" class="error"></p>
+
+                <button type="submit" class="login-btn">
+                    Login to Dashboard →
+                </button>
+
+            </form>
+
+            <div class="demo-info">
+                <b>Demo Access</b>
+                <p>Email: demo@dengueshield.ai</p>
+                <p>Password: dengue123</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- DASHBOARD -->
+
+<section id="dashboardPage" class="dashboard hidden">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+            🛡️ <span>DengueShield <b>AI</b></span>
+        </div>
+
+        <div class="menu-label">MAIN MENU</div>
+
+        <nav>
+            <a href="#" class="nav-link active" data-section="overview">
+                <span>▦</span> Overview
+            </a>
+
+            <a href="#" class="nav-link" data-section="analytics">
+                <span>◷</span> Risk Analytics
+            </a>
+
+            <a href="#" class="nav-link" data-section="wards">
+                <span>⌖</span> Ward Monitoring
+            </a>
+
+            <a href="#" class="nav-link" data-section="forecast">
+                <span>◴</span> 7-Day Forecast
+            </a>
+
+            <a href="#" class="nav-link" data-section="insights">
+                <span>✧</span> AI Insights
+            </a>
+
+            <a href="#" class="nav-link" data-section="prevention">
+                <span>♡</span> Prevention
+            </a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="status-indicator"></div>
+            System Demo Active
+
+            <button id="logoutBtn" class="logout-btn">
+                ↪ Logout
+            </button>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <h2 id="pageTitle">Dashboard Overview</h2>
+                <p>Kolkata, West Bengal | Dengue Surveillance</p>
+            </div>
+
+            <div class="topbar-right">
+                <span class="live-status">● DEMO MODE</span>
+                <div class="profile">
+                    <div class="avatar">A</div>
+                    <div>
+                        <b>Admin</b>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- OVERVIEW SECTION -->
+
+        <section id="overview" class="content-section">
+
+            <div class="welcome-banner">
+                <div>
+                    <span>PUBLIC HEALTH INTELLIGENCE PLATFORM</span>
+                    <h1>Welcome to DengueShield AI</h1>
+                    <p>
+                        Monitor dengue trends, analyze ward-level risks
+                        and explore preventive strategies.
+                    </p>
+                </div>
+                <div class="shield-illustration">🛡️</div>
+            </div>
+
+
+            <!-- STAT CARDS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Total Wards</span>
+                        <span class="stat-icon blue">⌖</span>
+                    </div>
+                    <h2>144</h2>
+                    <small>Kolkata Municipal Area</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Historical Records</span>
+                        <span class="stat-icon purple">▤</span>
+                    </div>
+                    <h2>864</h2>
+                    <small>2017 – 2022 dataset</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>High Risk Wards</span>
+                        <span class="stat-icon orange">⚠</span>
+                    </div>
+                    <h2 id="highRiskCount">--</h2>
+                    <small>Illustrative demo classification</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-top">
+                        <span>Monitoring Status</span>
+                        <span class="stat-icon green">✓</span>
+                    </div>
+                    <h2>Active</h2>
+                    <small>Demo environment running</small>
+                </div>
+
+            </div>
+
+
+            <!-- CHARTS -->
+
+            <div class="charts-grid">
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Historical Dengue Trends</h3>
+                            <p>Illustrative historical trend visualization</p>
+                        </div>
+                        <span class="chart-label">2017–2022</span>
+                    </div>
+
+                    <canvas id="trendChart"></canvas>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Ward Risk Distribution</h3>
+                            <p>Illustrative demo classification</p>
+                        </div>
+                    </div>
+
+                    <canvas id="riskChart"></canvas>
+                </div>
+
+            </div>
+
+
+            <!-- AI INSIGHTS -->
+
+            <div class="panel ai-panel">
+
+                <div class="ai-heading">
+                    <div class="ai-icon">✧</div>
+                    <div>
+                        <h3>AI-Powered Insights</h3>
+                        <p>Intelligent public health assistance</p>
+                    </div>
+                    <span class="ai-badge">AI DEMO</span>
+                </div>
+
+                <div class="ai-message">
+                    <h4>Understanding Dengue Risk</h4>
+
+                    <p>
+                        Dengue risk monitoring requires considering
+                        historical incidence, rainfall, humidity,
+                        temperature, mosquito activity and breeding sites.
+                    </p>
+
+                    <p>
+                        The current demonstration uses historical
+                        ward-level dengue incidence data. Environmental
+                        indicators are not yet available in the dataset.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANALYTICS SECTION -->
+
+        <section id="analytics" class="content-section hidden">
+
+            <div class="section-intro">
+                <h2>Dengue Risk Analytics</h2>
+                <p>Explore historical incidence and illustrative risk patterns.</p>
+            </div>
+
+            <div class="panel">
+                <h3>Historical Incidence Analysis</h3>
+                <canvas id="analyticsChart"></canvas>
+            </div>
+
+            <div class="panel">
+                <h3>Risk Classification</h3>
+                <div class="risk-legend">
+                    <span class="low">Low Risk</span>
+                    <span class="moderate">Moderate Risk</span>
+                    <span class="high">High Risk</span>
+                    <span class="very-high">Very High Risk</span>
+                </div>
+                <p class="muted">
+                    Risk scores shown in this demo are illustrative,
+                    not validated real-time predictions.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- WARD MONITORING -->
+
+        <section id="wards" class="content-section hidden">
+
+            <div class="section-intro">
+                <h2>Ward Monitoring</h2>
+                <p>Explore the illustrative ward-level risk dataset.</p>
+            </div>
+
+            <div class="panel">
+
+                <div class="table-header">
+                    <h3>Kolkata Ward Risk Overview</h3>
+
+                    <input
+                        type="text"
+                        id="wardSearch"
+                        placeholder="Search ward..."
+                    >
+                </div>
+
+                <div class="table-scroll">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Ward</th>
+                                <th>Risk Score</th>
+                                <th>Risk Level</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="wardTable"></tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div class="panel">
+                <h3>Ward Surveillance Map</h3>
+                <div class="map-placeholder">
+                    <span>📍</span>
+                    <h3>Kolkata Ward Map</h3>
+                    <p>
+                        Geographic ward visualization will be
+                        integrated using Leaflet GIS.
+                    </p>
+                    <small>Map integration placeholder</small>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- FORECAST SECTION -->
+
+        <section id="forecast" class="content-section hidden">
+
+            <div class="section-intro">
+                <h2>7-Day Dengue Forecast</h2>
+                <p>Forecast module interface – model integration pending.</p>
+            </div>
+
+            <div class="panel">
+                <div class="forecast-placeholder">
+                    <span>◴</span>
+                    <h3>Predictive Forecasting Engine</h3>
+                    <p>
+                        Connect the trained machine learning model
+                        to generate a 7-day ward-level risk forecast.
+                    </p>
+                    <span class="coming-soon">MODEL NOT CONNECTED</span>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- AI INSIGHTS SECTION -->
+
+        <section id="insights" class="content-section hidden">
+
+            <div class="section-intro">
+                <h2>AI Insights Assistant</h2>
+                <p>Explore AI-assisted public health explanations.</p>
+            </div>
+
+            <div class="panel">
+                <div class="ai-heading">
+                    <div class="ai-icon">✧</div>
+                    <div>
+                        <h3>DengueShield AI Assistant</h3>
+                        <p>Public health intelligence</p>
+                    </div>
+                </div>
+
+                <div id="chatMessages" class="chat-messages">
+                    <div class="bot-message">
+                        Hello! I am DengueShield AI.
+                        Ask me about dengue monitoring,
+                        historical trends or prevention.
+                    </div>
+                </div>
+
+                <form id="chatForm" class="chat-form">
+                    <input
+                        type="text"
+                        id="chatInput"
+                        placeholder="Ask something about dengue..."
+                        required
+                    >
+                    <button type="submit">Send →</button>
+                </form>
+
+                <p class="muted">
+                    Demo responses only. Connect Gemini API for live AI responses.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- PREVENTION -->
+
+        <section id="prevention" class="content-section hidden">
+
+            <div class="section-intro">
+                <h2>Prevention & Intervention</h2>
+                <p>Explore recommended community-level preventive actions.</p>
+            </div>
+
+            <div class="prevention-grid">
+
+                <div class="panel prevention-card">
+                    <span>💧</span>
+                    <h3>Remove Stagnant Water</h3>
+                    <p>Encourage regular inspection of water containers and potential breeding sites.</p>
+                </div>
+
+                <div class="panel prevention-card">
+                    <span>🦟</span>
+                    <h3>Mosquito Surveillance</h3>
+                    <p>Monitor mosquito activity and report potential breeding hotspots.</p>
+                </div>
+
+                <div class="panel prevention-card">
+                    <span>📢</span>
+                    <h3>Community Awareness</h3>
+                    <p>Promote dengue awareness and preventive practices in local communities.</p>
+                </div>
+
+                <div class="panel prevention-card">
+                    <span>🏥</span>
+                    <h3>Health Monitoring</h3>
+                    <p>Encourage timely consultation with healthcare professionals when symptoms occur.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <footer>
+            DengueShield AI © 2026 | Predict. Explain. Prevent.
+        </footer>
+
+    </main>
+
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
